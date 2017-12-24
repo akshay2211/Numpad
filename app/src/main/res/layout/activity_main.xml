@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:numpad="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context="com.fxn769.numlockdemo.com.fxn769.numpaddemo.MainActivity">
+
+    <TextView
+        android:id="@+id/remaining_digit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="38dp"
+        android:layout_marginRight="38dp"
+        android:layout_weight="1"
+        android:gravity="bottom"
+        android:textColor="@color/colorAccent"
+        android:textSize="14dp" />
+
+    <TextView
+        android:id="@+id/txt"
+        android:layout_width="wrap_content"
+        android:layout_height="86dp"
+        android:layout_gravity="top|center"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:gravity="center_horizontal|top"
+        android:textColor="@color/colorAccent"
+        android:textSize="38dp" />
+
+    <com.fxn769.Numpad
+        android:id="@+id/num"
+        android:layout_width="300dp"
+        android:layout_height="400dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="50dp"
+        numpad:numpad_background_resource="@drawable/numpad_background"
+        numpad:numpad_fontpath="fonts/custom_font.ttf"
+        numpad:numpad_grid_background_color="@color/colorAccent"
+        numpad:numpad_grid_line_thickness="2dp"
+        numpad:numpad_grid_visible="true"
+        numpad:numpad_image_resource="@drawable/ic_backspace"
+        numpad:numpad_text_color="#000000"
+        numpad:numpad_text_limit="10"
+        numpad:numpad_text_size="18dp" />
+
+</LinearLayout>

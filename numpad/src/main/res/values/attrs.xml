@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Numpad">
+        <attr name="numpad_digits" format="string" />
+        <attr name="numpad_text_limit" format="integer" />
+        <attr name="numpad_text_size" format="dimension" />
+        <attr name="numpad_text_color" format="color" />
+        <attr name="numpad_background_resource" format="reference" />
+        <attr name="numpad_image_resource" format="reference" />
+        <attr name="numpad_grid_visible" format="boolean" />
+        <attr name="numpad_grid_background_color" format="color" />
+        <attr name="numpad_grid_line_thickness" format="dimension" />
+        <attr name="numpad_fontpath" format="string" />
+    </declare-styleable>
+</resources>

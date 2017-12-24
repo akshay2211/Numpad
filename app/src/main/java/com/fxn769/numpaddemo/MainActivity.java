@@ -7,7 +7,6 @@ import android.widget.TextView;
 
 import com.fxn769.Numpad;
 import com.fxn769.TextGetListner;
-import com.fxn769.numlockdemo.R;
 
 public class MainActivity extends AppCompatActivity {
     TextView txt, remaining_digit;
