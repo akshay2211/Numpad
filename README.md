@@ -1,10 +1,9 @@
 Numpad
 ======
-Numaric inputs made easy with Numpad
+Number input made easy with Numpad
 
 Demo
 ----
-![](media/one.png)
 ![](media/media.gif)
 
 Usage
