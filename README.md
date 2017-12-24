@@ -11,7 +11,7 @@ Usage
 -----
 include namespace
 ```groovy
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:numpad="http://schemas.android.com/apk/res-auto"
 ```
 Numpad xml representation
 ```groovy
