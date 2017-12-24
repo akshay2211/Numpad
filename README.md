@@ -31,6 +31,14 @@ Numpad xml representation
                 numpad:numpad_text_size="18dp" />
 ```
 
+get added data from listner
+```groovy
+        Numpad numpad = findViewById(R.id.num);
+        numpad.setOnTextChangeListner((String text, int digits_remaining) -> {
+                   Log.d("input",text+"  "+digits_remaining);
+                });
+```
+
 Download
 --------
 
