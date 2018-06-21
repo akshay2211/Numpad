@@ -48,7 +48,7 @@ Download
 
  [ ![Download](https://api.bintray.com/packages/fxn769/android_projects/Numpad/images/download.svg) ](https://bintray.com/fxn769/android_projects/Numpad/_latestVersion)  or grab via Gradle:
 ```groovy
-        compile 'com.fxn769:numpad:1.0'
+        implementation 'com.fxn769:numpad:1.0'
 ```
 or Maven:
 ```xml
@@ -70,7 +70,7 @@ Snapshots of the development version are available in [Sonatype's `snapshots` re
 
 
 ## License
-Licensed under the Apache License, Version 2.0, [click here for the full license](/LICENSE.txt).
+Licensed under the Apache License, Version 2.0, [click here for the full license](/LICENSE).
 
 ## Author & support
 This project was created by [Akshay Sharma](https://akshay2211.github.io/).
