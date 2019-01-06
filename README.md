@@ -32,7 +32,8 @@ Numpad xml representation
                 numpad:numpad_image_resource="@drawable/ic_backspace"
                 numpad:numpad_text_color="#000000"
                 numpad:numpad_text_limit="10"
-                numpad:numpad_text_size="18dp" />
+                numpad:numpad_text_size="18dp"
+                numpad:numpad_comma="." />
 ```
 
 get added data from listner
