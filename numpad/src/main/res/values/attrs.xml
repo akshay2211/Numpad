@@ -11,5 +11,6 @@
         <attr name="numpad_grid_background_color" format="color" />
         <attr name="numpad_grid_line_thickness" format="dimension" />
         <attr name="numpad_fontpath" format="string" />
+        <attr name="numpad_comma" format="string" />
     </declare-styleable>
 </resources>

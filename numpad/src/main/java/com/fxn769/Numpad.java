@@ -34,8 +34,10 @@ public class Numpad extends FrameLayout implements View.OnClickListener {
     private int GridBackgroundColor = Color.GRAY;
     private int GridThickness = 3;
     private String FontFaceString = "";
+    private String CommaString = "";
     private Typeface typeface;
     private ImageView delete;
+    private TextView comma;
     private FrameLayout delete_layout;
     private TextGetListner textGetListner;
 
@@ -92,6 +94,7 @@ public class Numpad extends FrameLayout implements View.OnClickListener {
         GridBackgroundColor = attributes.getColor(R.styleable.Numpad_numpad_grid_background_color, Color.GRAY);
         GridThickness = (int) attributes.getDimension(R.styleable.Numpad_numpad_grid_line_thickness, 3);
         FontFaceString = attributes.getString(R.styleable.Numpad_numpad_fontpath);
+        CommaString = attributes.getString(R.styleable.Numpad_numpad_comma);
         if (digits == null) {
             digits = "";
         }
@@ -118,6 +121,7 @@ public class Numpad extends FrameLayout implements View.OnClickListener {
         line.add((ImageView) v.findViewById(R.id.line9));
         line.add((ImageView) v.findViewById(R.id.line10));
         line.add((ImageView) v.findViewById(R.id.line11));
+        comma = v.findViewById(R.id.comma);
         delete = v.findViewById(R.id.delete);
         delete_layout = v.findViewById(R.id.delete_layout);
         if (FontFaceString == null) {
@@ -160,6 +164,15 @@ public class Numpad extends FrameLayout implements View.OnClickListener {
         delete_layout.setOnClickListener(this);
         delete_layout.setBackgroundResource(BackgroundResource);
         delete.setImageResource(ImageResource);
+
+        if (CommaString != null) {
+            comma.setText(CommaString);
+            comma.setOnClickListener(this);
+            comma.setTextSize(TextSize);
+            comma.setTextColor(TextColor);
+            comma.setBackgroundResource(BackgroundResource);
+            comma.setTypeface(typeface);
+        }
     }
 
     public String getDigits() {
