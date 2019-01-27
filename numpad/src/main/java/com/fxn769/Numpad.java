@@ -165,6 +165,10 @@ public class Numpad extends FrameLayout implements View.OnClickListener {
     public String getDigits() {
         return digits;
     }
+    
+    public void clearDigits() {
+        digits="";
+    }
 
     public int getTextLengthLimit() {
         return TextLengthLimit;
