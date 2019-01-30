@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
             if (text.length() == 0) {
                 remaining_digit.setText("");
             } else {
-                remaining_digit.setText("Remaining digits " + digits_remaining + "/" + numpad.getTextLengthLimit());
+                remaining_digit.setText("Remaining digits: " + digits_remaining + "/" + numpad.getTextLengthLimit());
             }
             txt.setText(text);
         });
