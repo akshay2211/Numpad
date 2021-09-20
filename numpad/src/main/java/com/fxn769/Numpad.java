@@ -4,8 +4,6 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,17 +39,17 @@ public class Numpad extends FrameLayout implements View.OnClickListener {
     private FrameLayout delete_layout;
     private TextGetListner textGetListner;
 
-    public Numpad(@NonNull Context context) {
+    public Numpad(Context context) {
         super(context);
         initialise(context, null);
     }
 
-    public Numpad(@NonNull Context context, @Nullable AttributeSet attrs) {
+    public Numpad(Context context, AttributeSet attrs) {
         super(context, attrs);
         initialise(context, attrs);
     }
 
-    public Numpad(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public Numpad(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         initialise(context, attrs);
     }
