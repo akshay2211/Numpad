@@ -8,7 +8,7 @@
     android:background="#fff"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context="com.fxn769.numpaddemo.MainActivity">
+    tools:context="io.ak1.numpaddemo.MainActivity">
 
     <TextView
         android:id="@+id/remaining_digit"
