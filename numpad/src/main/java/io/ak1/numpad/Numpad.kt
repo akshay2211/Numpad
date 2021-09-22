@@ -18,8 +18,11 @@ enum class NumType {
     NUMBER, DELETE
 }
 
+data class Options(val color: Color = Color.Black)
+
+
 @Composable
-fun Numpad(modifier_outer: Modifier = Modifier, callback: (type: NumType, number: Int) -> Unit) {
+fun Numpad(modifier_outer: Modifier = Modifier,options: Options, callback: (type: NumType, number: Int) -> Unit) {
     val (color, setColor) = remember { mutableStateOf(Color.White) }
     val modifier = Modifier
         .fillMaxHeight()

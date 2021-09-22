@@ -19,6 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import io.ak1.numpad.NumType
 import io.ak1.numpad.Numpad
+import io.ak1.numpad.Options
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,7 +37,8 @@ class MainActivity : AppCompatActivity() {
                             Numpad(
                                 modifier_outer = Modifier
                                     .fillMaxWidth()
-                                    .height(300.dp)
+                                    .height(300.dp),
+                                options = Options()
                             ) { type, num ->
                                 if (type == NumType.NUMBER) {
                                     val txt = text + num
