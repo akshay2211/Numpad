@@ -5,9 +5,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.widget.TextView
 import android.os.Bundle
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import io.ak1.numpad.Numpad
 
 class MainActivity : AppCompatActivity() {
     var txt: TextView? = null
@@ -18,8 +22,7 @@ class MainActivity : AppCompatActivity() {
             MaterialTheme(
                 content = {
                     Surface(color = MaterialTheme.colors.background) {
-                        //Numpad()
-                        Text("hello")
+                        Numpad(modifier_outer = Modifier.fillMaxWidth().height(300.dp))
                     }
                 }
             )
