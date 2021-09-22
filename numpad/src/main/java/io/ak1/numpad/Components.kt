@@ -19,9 +19,11 @@ import androidx.compose.ui.unit.dp
 
 
 @Composable
-fun TextBox(modifier: Modifier, text: String) {
+fun TextBox(modifier: Modifier, text: String, callback: (type: NumType, number: Int) -> Unit) {
     Button(
-        modifier = modifier, onClick = onClick(text),
+        modifier = modifier, onClick = {
+            callback(NumType.NUMBER,text.toInt())
+        },
         colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.surface),
         elevation = ButtonDefaults.elevation(defaultElevation = 0.dp)
     ) {
@@ -31,10 +33,10 @@ fun TextBox(modifier: Modifier, text: String) {
 
 
 @Composable
-fun TextRow(modifierRow: Modifier, contentModifier: Modifier, range: IntRange) {
+fun TextRow(modifierRow: Modifier, contentModifier: Modifier, range: IntRange,callback: (type: NumType, number: Int) -> Unit) {
     Row(modifier = modifierRow) {
         for (i in range) {
-            TextBox(text = i.toString(), modifier = contentModifier)
+            TextBox(text = i.toString(), modifier = contentModifier,callback = callback)
         }
     }
 }
@@ -44,14 +46,18 @@ fun CustomRow(
     modifierRow: Modifier,
     contentModifier: Modifier,
     allowDecimal: Boolean,
-    backPressIcon: Int
+    backPressIcon: Int,
+    callback: (type: NumType, number: Int) -> Unit
 ) {
     val decimalText = if (allowDecimal) "." else " "
     Row(modifier = modifierRow) {
-        TextBox(text = decimalText, modifier = contentModifier)
-        TextBox(text = "0", modifier = contentModifier)
+        TextBox(text = decimalText, modifier = contentModifier,callback = callback)
+        TextBox(text = "0", modifier = contentModifier,callback = callback)
         Button(
-            modifier = contentModifier, onClick = onClick("delete"),
+            shape = MaterialTheme.shapes.small,
+            modifier = contentModifier, onClick = {
+                callback(NumType.DELETE,0)
+            },
             colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.surface),
             elevation = ButtonDefaults.elevation(defaultElevation = 0.dp)
         ) {
