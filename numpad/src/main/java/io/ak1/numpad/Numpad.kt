@@ -25,16 +25,6 @@ fun Numpad(modifier_outer: Modifier = Modifier) {
             .fillMaxHeight()
             .background(color = color)
             .padding(2.dp)
-            .pointerInput(Unit) {
-                detectTapGestures(
-                    onLongPress = {
-                        // perform some action here..
-                    },
-                    onTap = {
-                        Log.e("offets", " ${it.x} ${it.y}")
-                    }
-                )
-            }
 
     val fullWidthModifier = Modifier
         .fillMaxSize()
@@ -60,6 +50,11 @@ fun Numpad(modifier_outer: Modifier = Modifier) {
         )
     }
 
+}
+fun onClick(text: String) = object : () -> Unit {
+    override fun invoke() {
+        Log.e("hello", "invoke $text")
+    }
 }
 
 

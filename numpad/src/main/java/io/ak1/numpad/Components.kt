@@ -1,14 +1,16 @@
 package io.ak1.numpad
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
+import androidx.compose.material.Button
+import androidx.compose.material.ButtonDefaults
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
 
 /**
  * Created by akshay on 22/09/21
@@ -18,16 +20,19 @@ import androidx.compose.ui.text.style.TextAlign
 
 @Composable
 fun TextBox(modifier: Modifier, text: String) {
-    Box(modifier, contentAlignment = Alignment.Center) {
+    Button(
+        modifier = modifier, onClick = onClick(text),
+        colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.surface),
+        elevation = ButtonDefaults.elevation(defaultElevation = 0.dp)
+    ) {
         Text(text = text, textAlign = TextAlign.Center)
     }
 }
 
+
 @Composable
 fun TextRow(modifierRow: Modifier, contentModifier: Modifier, range: IntRange) {
-    Row(
-        modifier = modifierRow
-    ) {
+    Row(modifier = modifierRow) {
         for (i in range) {
             TextBox(text = i.toString(), modifier = contentModifier)
         }
@@ -42,12 +47,14 @@ fun CustomRow(
     backPressIcon: Int
 ) {
     val decimalText = if (allowDecimal) "." else " "
-    Row(
-        modifier = modifierRow
-    ) {
+    Row(modifier = modifierRow) {
         TextBox(text = decimalText, modifier = contentModifier)
         TextBox(text = "0", modifier = contentModifier)
-        Box(contentModifier, contentAlignment = Alignment.Center) {
+        Button(
+            modifier = contentModifier, onClick = onClick("delete"),
+            colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.surface),
+            elevation = ButtonDefaults.elevation(defaultElevation = 0.dp)
+        ) {
             Image(painter = painterResource(backPressIcon), contentDescription = "backpress")
         }
     }
