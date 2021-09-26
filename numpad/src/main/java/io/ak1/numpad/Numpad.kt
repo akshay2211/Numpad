@@ -3,15 +3,17 @@ package io.ak1.numpad
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
 /**
  * Created by akshay on 20/09/21
@@ -30,13 +32,34 @@ data class Configuration(
     var fontFamily: FontFamily? = null,
     @DrawableRes
     var deleteIcon: Int = R.drawable.ic_delete,
-    var cornerRadius : Dp = 0.dp,
+    var cornerRadius: Dp = 0.dp,
     var inner_modifier: Modifier = Modifier
         .fillMaxHeight()
         .background(color = color)
         .padding(2.dp)
 )
 
+sealed class BasicConfigs {
+    object Config1 : BasicConfigs() {
+        fun getConfig(): Configuration {
+            return Configuration().apply {
+              //  fontFamily = FontFamily(Font(R.font.quicksand_light))
+                fontSize = 30.sp
+            }
+        }
+    }
+    object Config2 : BasicConfigs() {
+        fun getConfig(): Configuration {
+            return Configuration()
+        }
+    }
+    object Config3 : BasicConfigs() {
+        fun getConfig(): Configuration {
+            return Configuration()
+        }
+    }
+
+}
 
 
 @Composable
