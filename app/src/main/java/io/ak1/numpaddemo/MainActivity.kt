@@ -20,6 +20,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import io.ak1.numpad.BasicConfigs
 import io.ak1.numpad.Configuration
 import io.ak1.numpad.NumType
 import io.ak1.numpad.Numpad
@@ -45,10 +46,7 @@ class MainActivity : AppCompatActivity() {
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .height(330.dp),
-                            configuration = Configuration().apply {
-                                fontFamily = FontFamily(Font(R.font.quicksand_light))
-                                fontSize = 30.sp
-                            }
+                            configuration = BasicConfigs.Config1.getConfig()
                         ) { type, num ->
                             if (type == NumType.NUMBER && text.length<5) {
                                 val txt = text + num
