@@ -40,22 +40,30 @@ data class Configuration(
 )
 
 sealed class BasicConfigs {
+    // Sample Configuration One
     object Config1 : BasicConfigs() {
         fun getConfig(): Configuration {
             return Configuration().apply {
+                color = Color.Blue
               //  fontFamily = FontFamily(Font(R.font.quicksand_light))
                 fontSize = 30.sp
             }
         }
     }
+    // Sample Configuration Two
     object Config2 : BasicConfigs() {
         fun getConfig(): Configuration {
-            return Configuration()
+            return Configuration().apply {
+
+            }
         }
     }
+    // Sample Configuration Three
     object Config3 : BasicConfigs() {
         fun getConfig(): Configuration {
-            return Configuration()
+            return Configuration().apply {
+
+            }
         }
     }
 
