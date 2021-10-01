@@ -12,6 +12,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
+import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -44,7 +45,6 @@ class MainActivity : AppCompatActivity() {
                                 Text(
                                     text = text,
                                     modifier = Modifier
-
                                         .padding(20.dp),
                                     textAlign = TextAlign.Center,
                                     fontFamily = FontFamily(Font(R.font.quicksand_light)),
@@ -77,4 +77,38 @@ class MainActivity : AppCompatActivity() {
         )
     }
 }
+    /*@Composable
+    fun mainView(){
+        Column(modifier = Modifier.fillMaxSize()) {
+            Box(modifier = Modifier.weight(1f, true)) {
+                Text(
+                    text = text,
+                    modifier = Modifier
+                        .padding(20.dp),
+                    textAlign = TextAlign.Center,
+                    fontFamily = FontFamily(Font(R.font.quicksand_light)),
+                    fontSize = 30.sp)
+                Image(modifier = Modifier.clickable {
+                    configs = BasicConfigs.Config2.getConfig()
+                },
+                    painter = painterResource(R.drawable.ic_settings),
+                    contentDescription = "config_icon"
+                )
+            }
+
+            Numpad(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(330.dp),
+                configuration = configs
+            ) { type, num ->
+                if (type == NumType.NUMBER && text.length<5) {
+                    val txt = text + num
+                    setText("$txt")
+                } else if (type == NumType.DELETE && text.isNotEmpty()) {
+                    setText(text.substring(0, text.length - 1))
+                }
+            }
+        }
+    }*/
 }
