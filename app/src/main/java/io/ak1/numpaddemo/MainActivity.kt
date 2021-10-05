@@ -32,7 +32,6 @@ import io.ak1.numpad.Numpad
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContent {
             MaterialTheme(
                 content = {
