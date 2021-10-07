@@ -9,7 +9,6 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.fontResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -21,15 +20,27 @@ import androidx.compose.ui.unit.dp
 
 
 @Composable
-fun TextBox(modifier: Modifier, text: String,configuration: Configuration, callback: (type: NumType, number: Int) -> Unit) {
+fun TextBox(
+    modifier: Modifier,
+    text: String,
+    configuration: Configuration,
+    callback: (type: NumType, number: Int) -> Unit
+) {
     Button(
         modifier = modifier, onClick = {
-            callback(NumType.NUMBER, text.toInt())
+            if (!text.trim().isNullOrEmpty()) {
+                callback(NumType.NUMBER, text.toInt())
+            }
         },
         colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.surface),
         elevation = ButtonDefaults.elevation(defaultElevation = 0.dp)
     ) {
-        Text(text = text, fontFamily = configuration.fontFamily,fontSize = configuration.fontSize,textAlign = TextAlign.Center)
+        Text(
+            text = text,
+            fontFamily = configuration.fontFamily,
+            fontSize = configuration.fontSize,
+            textAlign = TextAlign.Center
+        )
     }
 }
 
