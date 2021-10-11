@@ -2,7 +2,8 @@
 
 Numpad
 ======
-Number input made easy with Numpad
+Number input made easy with Numpad,
+Written in jetpack compose.
 
 ## Download
 [![Download](https://search.maven.org/artifact/io.ak1/numpad)](https://search.maven.org/artifact/io.ak1/numpad) or grab via Gradle:
